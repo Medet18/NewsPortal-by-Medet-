@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //Route only for admin
-Route::group(['prefix'=>'{lang}', 'middleware' =>['setLanguage']], function () {
+Route::group(['prefix'=>'{lang}','where' => ['lang' => '[a-zA-Z]{2}'], 'middleware' =>['setLanguage']], function () {
 
     Route::get('num/{num}', function($num){
         dd($num);
